@@ -7,8 +7,60 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0;
             line-height: 1.6;
+        }
+        header {
+            background: #007bff;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+        .logo {
+            font-size: 1.5em;
+        }
+        .burger-menu {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+        .menu {
+            display: flex;
+        }
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+        .menu a:hover {
+            background: #0056b3;
+        }
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            background: #007bff;
+        }
+        .mobile-menu a {
+            padding: 10px;
+            text-align: center;
+        }
+        .mobile-menu.active {
+            display: flex;
+        }
+        .content {
+            padding: 20px;
+            display: none;
+        }
+        .content.active {
+            display: block;
         }
         table {
             width: 100%;
@@ -29,39 +81,29 @@
             font-size: 1.5em;
             margin-bottom: 10px;
         }
-        .buttons {
-            margin-bottom: 20px;
-        }
-        .buttons button {
-            padding: 10px 20px;
-            margin-right: 10px;
-            border: none;
-            background-color: #007bff;
-            color: white;
-            cursor: pointer;
-        }
-        .buttons button:hover {
-            background-color: #0056b3;
-        }
-        .content {
-            display: none;
-        }
-        .content.active {
-            display: block;
-        }
     </style>
 </head>
 <body>
-    <h1>Programme de Séjour à l'île de Ré</h1>
-    
-    <div class="buttons">
-        <button onclick="showContent('planning')">Planning</button>
-        <button onclick="showContent('supermarches')">Supermarchés</button>
-        <button onclick="showContent('pharmacies')">Pharmacies</button>
-        <button onclick="showContent('medecins')">Médecins</button>
-    </div>
-    
-    <div id="planning" class="content active">
+    <header>
+        <div class="logo">Séjour Île de Ré</div>
+        <div class="burger-menu" onclick="toggleMenu()">☰</div>
+        <nav class="menu">
+            <a href="#" onclick="showContent('planning')">Planning</a>
+            <a href="#" onclick="showContent('supermarches')">Supermarchés</a>
+            <a href="#" onclick="showContent('pharmacies')">Pharmacies</a>
+            <a href="#" onclick="showContent('medecins')">Médecins</a>
+            <a href="#" onclick="showContent('parking')">Parking</a>
+        </nav>
+        <nav class="mobile-menu" id="mobile-menu">
+            <a href="#" onclick="showContent('planning')">Planning</a>
+            <a href="#" onclick="showContent('supermarches')">Supermarchés</a>
+            <a href="#" onclick="showContent('pharmacies')">Pharmacies</a>
+            <a href="#" onclick="showContent('medecins')">Médecins</a>
+            <a href="#" onclick="showContent('parking')">Parking</a>
+        </nav>
+    </header>
+
+    <div class="content" id="planning">
         <table>
             <caption>Itinéraire du 12 au 21 août 2024</caption>
             <thead>
@@ -137,7 +179,7 @@
         </table>
     </div>
     
-    <div id="supermarches" class="content">
+    <div class="content" id="supermarches">
         <h2>Supermarchés autour de l'adresse :</h2>
         <p>31 rue de la Cailletière, La Noue, 17740 Sainte-Marie-de-Ré, France</p>
         <ul>
@@ -148,7 +190,7 @@
         </ul>
     </div>
     
-    <div id="pharmacies" class="content">
+    <div class="content" id="pharmacies">
         <h2>Pharmacies autour de l'adresse :</h2>
         <p>31 rue de la Cailletière, La Noue, 17740 Sainte-Marie-de-Ré, France</p>
         <ul>
@@ -158,7 +200,7 @@
         </ul>
     </div>
 
-    <div id="medecins" class="content">
+    <div class="content" id="medecins">
         <h2>Médecins et Pédiatres autour de l'adresse :</h2>
         <p>31 rue de la Cailletière, La Noue, 17740 Sainte-Marie-de-Ré, France</p>
         <ul>
@@ -166,6 +208,22 @@
             <li>Dr. Marie Lefèvre - Pédiatre<br>2 Avenue du 8 Mai 1945, 17740 Sainte-Marie-de-Ré</li>
             <li>Dr. Pierre Martin - Médecin Généraliste<br>30 Boulevard du Front de Mer, 17740 La Noue</li>
             <li>Dr. Sophie Dubois - Pédiatre<br>25 Rue de l'Aunis, 17740 Sainte-Marie-de-Ré</li>
+        </ul>
+    </div>
+
+    <div class="content" id="parking">
+        <h2>Parking près des sites à visiter :</h2>
+        <p>Voici les parkings recommandés pour chaque site durant votre séjour :</p>
+        <ul>
+            <li><strong>12 août - Installation</strong>: Parking à proximité de votre hébergement.</li>
+            <li><strong>13 août - Saint-Martin-de-Ré</strong>: Parking du Port, Quai de la Poithevinière, 17740 Saint-Martin-de-Ré.</li>
+            <li><strong>14 août - Phare des Baleines</strong>: Parking du Phare, Route du Phare des Baleines, 17590 Les Portes-en-Ré.</li>
+            <li><strong>15 août - La Flotte</strong>: Parking du Marché, Place du Marché, 17630 La Flotte.</li>
+            <li><strong>16 août - Parc de la Barbette</strong>: Parking du Parc, 2 Rue du Général de Gaulle, 17740 Saint-Martin-de-Ré.</li>
+            <li><strong>17 août - La Couarde-sur-Mer</strong>: Parking Plage de Gros Jonc, Avenue du Gros Jonc, 17670 La Couarde-sur-Mer.</li>
+            <li><strong>18 août - Rivedoux-Plage</strong>: Parking du Centre Ville, Place de la République, 17940 Rivedoux-Plage.</li>
+            <li><strong>19 août - Jardin des Plantes</strong>: Parking du Jardin des Plantes, 1 Avenue du Jardin des Plantes, 17740 Saint-Martin-de-Ré.</li>
+            <li><strong>20 août - Sentier du Littoral</strong>: Parking du Sentier, Chemin du Littoral, 17740 La Flotte.</li>
         </ul>
     </div>
     
@@ -176,6 +234,11 @@
                 content.classList.remove('active');
             });
             document.getElementById(id).classList.add('active');
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('active');
         }
     </script>
 </body>
