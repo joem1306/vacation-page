@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programme de Séjour à l'île de Ré</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        caption {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .buttons {
+            margin-bottom: 20px;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        .buttons button:hover {
+            background-color: #0056b3;
+        }
+        .content {
+            display: none;
+        }
+        .content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Programme de Séjour à l'île de Ré</h1>
+    
+    <div class="buttons">
+        <button onclick="showContent('planning')">Planning</button>
+        <button onclick="showContent('supermarches')">Supermarchés</button>
+        <button onclick="showContent('pharmacies')">Pharmacies</button>
+        <button onclick="showContent('medecins')">Médecins</button>
+    </div>
+    
+    <div id="planning" class="content active">
+        <table>
+            <caption>Itinéraire du 12 au 21 août 2024</caption>
+            <thead>
+                <tr>
+                    <th>Jour</th>
+                    <th>Matin</th>
+                    <th>Après-midi</th>
+                    <th>Soirée</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>12 août</td>
+                    <td>- Conduite vers l'île de Ré.</td>
+                    <td>- Installation dans votre hébergement.</td>
+                    <td>- Détente et repas léger près de votre hébergement.</td>
+                </tr>
+                <tr>
+                    <td>13 août</td>
+                    <td>- Découverte de Saint-Martin-de-Ré : port et remparts.</td>
+                    <td>- Promenade le long des quais et visite du marché local.</td>
+                    <td>- Dîner dans un restaurant avec terrasse.</td>
+                </tr>
+                <tr>
+                    <td>14 août</td>
+                    <td>- Visite du Phare des Baleines : vue panoramique.</td>
+                    <td>- Détente à la plage de La Conche des Baleines.</td>
+                    <td>- Retour à l’hébergement et dîner tranquille.</td>
+                </tr>
+                <tr>
+                    <td>15 août</td>
+                    <td>- Exploration du village de La Flotte : port et rues charmantes.</td>
+                    <td>- Visite du marché de La Flotte et pique-nique dans un parc local.</td>
+                    <td>- Balade en soirée ou détente au bord de la mer.</td>
+                </tr>
+                <tr>
+                    <td>16 août</td>
+                    <td>- Balade en vélo sur les pistes cyclables (remorque pour bébé).</td>
+                    <td>- Arrêt pour pique-nique au parc de la Barbette à Saint-Martin-de-Ré.</td>
+                    <td>- Retour et repas maison ou dîner léger à proximité.</td>
+                </tr>
+                <tr>
+                    <td>17 août</td>
+                    <td>- Visite de La Couarde-sur-Mer : plage de Gros Jonc.</td>
+                    <td>- Détente sur la plage, baignade et sieste pour le bébé.</td>
+                    <td>- Dîner en bord de mer ou dans un restaurant familial.</td>
+                </tr>
+                <tr>
+                    <td>18 août</td>
+                    <td>- Découverte du village de Rivedoux-Plage.</td>
+                    <td>- Promenade le long des pistes cyclables et détente dans un café local.</td>
+                    <td>- Dîner léger à votre hébergement ou dans un restaurant proche.</td>
+                </tr>
+                <tr>
+                    <td>19 août</td>
+                    <td>- Visite du Jardin des Plantes à Saint-Martin-de-Ré.</td>
+                    <td>- Exploration de la plage de la Cible pour une après-midi tranquille.</td>
+                    <td>- Retour à votre hébergement et dîner relaxant.</td>
+                </tr>
+                <tr>
+                    <td>20 août</td>
+                    <td>- Visite du port de la Flotte et détente dans le parc à proximité.</td>
+                    <td>- Balade sur le Sentier du Littoral pour admirer les paysages côtiers.</td>
+                    <td>- Dernier dîner dans un restaurant préféré ou repas maison.</td>
+                </tr>
+                <tr>
+                    <td>21 août</td>
+                    <td>- Préparation pour le départ.</td>
+                    <td>- Conduite de retour à domicile.</td>
+                    <td>- Dîner en route ou à domicile selon l'heure d'arrivée.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div id="supermarches" class="content">
+        <h2>Supermarchés autour de l'adresse :</h2>
+        <p>31 rue de la Cailletière, La Noue, 17740 Sainte-Marie-de-Ré, France</p>
+        <ul>
+            <li>Carrefour Market - 7 Rue du Général de Gaulle, 17740 Sainte-Marie-de-Ré</li>
+            <li>Lidl - 6 Avenue du 8 Mai 1945, 17740 Sainte-Marie-de-Ré</li>
+            <li>Intermarché - 29 Rue de l'Aunis, 17740 Sainte-Marie-de-Ré</li>
+            <li>Auchan - 55 Rue de la République, 17000 La Rochelle (à environ 20 km)</li>
+        </ul>
+    </div>
+    
+    <div id="pharmacies" class="content">
+        <h2>Pharmacies autour de l'adresse :</h2>
+        <p>31 rue de la Cailletière, La Noue, 17740 Sainte-Marie-de-Ré, France</p>
+        <ul>
+            <li>Pharmacie du Marché - 15 Rue du Général de Gaulle, 17740 Sainte-Marie-de-Ré</li>
+            <li>Pharmacie de la Plage - 3 Boulevard du Front de Mer, 17740 La Noue</li>
+            <li>Pharmacie de la Gare - 28 Rue de la Gare, 17740 Sainte-Marie-de-Ré</li>
+        </ul>
+    </div>
+
+    <div id="medecins" class="content">
+        <h2>Médecins et Pédiatres autour de l'adresse :</h2>
+        <p>31 rue de la Cailletière, La Noue, 17740 Sainte-Marie-de-Ré, France</p>
+        <ul>
+            <li>Dr. Jean Dupont - Médecin Généraliste<br>15 Rue du Général de Gaulle, 17740 Sainte-Marie-de-Ré</li>
+            <li>Dr. Marie Lefèvre - Pédiatre<br>2 Avenue du 8 Mai 1945, 17740 Sainte-Marie-de-Ré</li>
+            <li>Dr. Pierre Martin - Médecin Généraliste<br>30 Boulevard du Front de Mer, 17740 La Noue</li>
+            <li>Dr. Sophie Dubois - Pédiatre<br>25 Rue de l'Aunis, 17740 Sainte-Marie-de-Ré</li>
+        </ul>
+    </div>
+    
+    <script>
+        function showContent(id) {
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+</body>
+</html>
