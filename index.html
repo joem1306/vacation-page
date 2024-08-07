@@ -15,26 +15,31 @@
             color: #fff;
             padding: 10px;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
             position: relative;
         }
         .logo {
             font-size: 1.5em;
+            text-align: center;
         }
         .burger-menu {
             display: none;
             font-size: 1.5em;
             cursor: pointer;
+            margin-top: 10px;
         }
         .menu {
             display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
         }
         .menu a {
             color: #fff;
             text-decoration: none;
             padding: 10px;
             display: block;
+            transition: background 0.3s;
         }
         .menu a:hover {
             background: #0056b3;
@@ -47,10 +52,11 @@
             left: 0;
             right: 0;
             background: #007bff;
+            text-align: center;
         }
         .mobile-menu a {
             padding: 10px;
-            text-align: center;
+            border-top: 1px solid #0056b3;
         }
         .mobile-menu.active {
             display: flex;
@@ -80,6 +86,17 @@
         caption {
             font-size: 1.5em;
             margin-bottom: 10px;
+        }
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+            }
+            .burger-menu {
+                display: block;
+            }
+            .logo {
+                font-size: 1.2em;
+            }
         }
     </style>
 </head>
